@@ -1,0 +1,326 @@
+#version 450
+
+layout(constant_id = 0) const uint ACCUM = 4;
+
+layout(local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+
+layout(set = 0, binding = 0) buffer OutBuffer {
+    float outData[];
+} outBuf;
+
+layout(push_constant) uniform PushConstants {
+    uint iters;
+    uint workItems;
+    float a;
+    float b;
+} pc;
+
+void main() {
+    uint idx = gl_GlobalInvocationID.x;
+    if (idx >= pc.workItems) {
+        return;
+    }
+    float x0 = outBuf.outData[idx];
+    float x1 = x0 + 0.1;
+    float x2 = x0 + 0.2;
+    float x3 = x0 + 0.3;
+    float x4 = x0 + 0.4;
+    float x5 = x0 + 0.5;
+    float x6 = x0 + 0.6;
+    float x7 = x0 + 0.7;
+    float x8 = x0 + 0.8;
+    float x9 = x0 + 0.9;
+    float x10 = x0 + 1.0;
+    float x11 = x0 + 1.1;
+    float x12 = x0 + 1.2;
+    float x13 = x0 + 1.3;
+    float x14 = x0 + 1.4;
+    float x15 = x0 + 1.5;
+    float x16 = x0 + 1.6;
+    float x17 = x0 + 1.7;
+    float x18 = x0 + 1.8;
+    float x19 = x0 + 1.9;
+    float x20 = x0 + 2.0;
+    float x21 = x0 + 2.1;
+    float x22 = x0 + 2.2;
+    float x23 = x0 + 2.3;
+    float x24 = x0 + 2.4;
+    float x25 = x0 + 2.5;
+    float x26 = x0 + 2.6;
+    float x27 = x0 + 2.7;
+    float x28 = x0 + 2.8;
+    float x29 = x0 + 2.9;
+    float x30 = x0 + 3.0;
+    float x31 = x0 + 3.1;
+    float x32 = x0 + 3.2;
+    float x33 = x0 + 3.3;
+    float x34 = x0 + 3.4;
+    float x35 = x0 + 3.5;
+    float x36 = x0 + 3.6;
+    float x37 = x0 + 3.7;
+    float x38 = x0 + 3.8;
+    float x39 = x0 + 3.9;
+    float x40 = x0 + 4.0;
+    float x41 = x0 + 4.1;
+    float x42 = x0 + 4.2;
+    float x43 = x0 + 4.3;
+    float x44 = x0 + 4.4;
+    float x45 = x0 + 4.5;
+    float x46 = x0 + 4.6;
+    float x47 = x0 + 4.7;
+    float x48 = x0 + 4.8;
+    float x49 = x0 + 4.9;
+    float x50 = x0 + 5.0;
+    float x51 = x0 + 5.1;
+    float x52 = x0 + 5.2;
+    float x53 = x0 + 5.3;
+    float x54 = x0 + 5.4;
+    float x55 = x0 + 5.5;
+    float x56 = x0 + 5.6;
+    float x57 = x0 + 5.7;
+    float x58 = x0 + 5.8;
+    float x59 = x0 + 5.9;
+    float x60 = x0 + 6.0;
+    float x61 = x0 + 6.1;
+    float x62 = x0 + 6.2;
+    float x63 = x0 + 6.3;
+    float x64 = x0 + 6.4;
+    float x65 = x0 + 6.5;
+    float x66 = x0 + 6.6;
+    float x67 = x0 + 6.7;
+    float x68 = x0 + 6.8;
+    float x69 = x0 + 6.9;
+    float x70 = x0 + 7.0;
+    float x71 = x0 + 7.1;
+    float x72 = x0 + 7.2;
+    float x73 = x0 + 7.3;
+    float x74 = x0 + 7.4;
+    float x75 = x0 + 7.5;
+    float x76 = x0 + 7.6;
+    float x77 = x0 + 7.7;
+    float x78 = x0 + 7.8;
+    float x79 = x0 + 7.9;
+    float x80 = x0 + 8.0;
+    float x81 = x0 + 8.1;
+    float x82 = x0 + 8.2;
+    float x83 = x0 + 8.3;
+    float x84 = x0 + 8.4;
+    float x85 = x0 + 8.5;
+    float x86 = x0 + 8.6;
+    float x87 = x0 + 8.7;
+    float x88 = x0 + 8.8;
+    float x89 = x0 + 8.9;
+    float x90 = x0 + 9.0;
+    float x91 = x0 + 9.1;
+    float x92 = x0 + 9.2;
+    float x93 = x0 + 9.3;
+    float x94 = x0 + 9.4;
+    float x95 = x0 + 9.5;
+    float x96 = x0 + 9.6;
+    float x97 = x0 + 9.7;
+    float x98 = x0 + 9.8;
+    float x99 = x0 + 9.9;
+    float x100 = x0 + 10.0;
+    float x101 = x0 + 10.1;
+    float x102 = x0 + 10.2;
+    float x103 = x0 + 10.3;
+    float x104 = x0 + 10.4;
+    float x105 = x0 + 10.5;
+    float x106 = x0 + 10.6;
+    float x107 = x0 + 10.7;
+    float x108 = x0 + 10.8;
+    float x109 = x0 + 10.9;
+    float x110 = x0 + 11.0;
+    float x111 = x0 + 11.1;
+    float x112 = x0 + 11.2;
+    float x113 = x0 + 11.3;
+    float x114 = x0 + 11.4;
+    float x115 = x0 + 11.5;
+    float x116 = x0 + 11.6;
+    float x117 = x0 + 11.7;
+    float x118 = x0 + 11.8;
+    float x119 = x0 + 11.9;
+    float x120 = x0 + 12.0;
+    float x121 = x0 + 12.1;
+    float x122 = x0 + 12.2;
+    float x123 = x0 + 12.3;
+    float x124 = x0 + 12.4;
+    float x125 = x0 + 12.5;
+    float x126 = x0 + 12.6;
+    float x127 = x0 + 12.7;
+    for (uint i = 0; i < pc.iters; ++i) {
+        x0 = fma(x0, pc.a, pc.b);
+        if (ACCUM >= 2) {
+            x1 = fma(x1, pc.a, pc.b);
+        }
+        if (ACCUM >= 4) {
+            x2 = fma(x2, pc.a, pc.b);
+            x3 = fma(x3, pc.a, pc.b);
+        }
+        if (ACCUM >= 8) {
+            x4 = fma(x4, pc.a, pc.b);
+            x5 = fma(x5, pc.a, pc.b);
+            x6 = fma(x6, pc.a, pc.b);
+            x7 = fma(x7, pc.a, pc.b);
+        }
+        if (ACCUM >= 16) {
+            x8 = fma(x8, pc.a, pc.b);
+            x9 = fma(x9, pc.a, pc.b);
+            x10 = fma(x10, pc.a, pc.b);
+            x11 = fma(x11, pc.a, pc.b);
+            x12 = fma(x12, pc.a, pc.b);
+            x13 = fma(x13, pc.a, pc.b);
+            x14 = fma(x14, pc.a, pc.b);
+            x15 = fma(x15, pc.a, pc.b);
+        }
+        if (ACCUM >= 32) {
+            x16 = fma(x16, pc.a, pc.b);
+            x17 = fma(x17, pc.a, pc.b);
+            x18 = fma(x18, pc.a, pc.b);
+            x19 = fma(x19, pc.a, pc.b);
+            x20 = fma(x20, pc.a, pc.b);
+            x21 = fma(x21, pc.a, pc.b);
+            x22 = fma(x22, pc.a, pc.b);
+            x23 = fma(x23, pc.a, pc.b);
+            x24 = fma(x24, pc.a, pc.b);
+            x25 = fma(x25, pc.a, pc.b);
+            x26 = fma(x26, pc.a, pc.b);
+            x27 = fma(x27, pc.a, pc.b);
+            x28 = fma(x28, pc.a, pc.b);
+            x29 = fma(x29, pc.a, pc.b);
+            x30 = fma(x30, pc.a, pc.b);
+            x31 = fma(x31, pc.a, pc.b);
+        }
+        if (ACCUM >= 64) {
+            x32 = fma(x32, pc.a, pc.b);
+            x33 = fma(x33, pc.a, pc.b);
+            x34 = fma(x34, pc.a, pc.b);
+            x35 = fma(x35, pc.a, pc.b);
+            x36 = fma(x36, pc.a, pc.b);
+            x37 = fma(x37, pc.a, pc.b);
+            x38 = fma(x38, pc.a, pc.b);
+            x39 = fma(x39, pc.a, pc.b);
+            x40 = fma(x40, pc.a, pc.b);
+            x41 = fma(x41, pc.a, pc.b);
+            x42 = fma(x42, pc.a, pc.b);
+            x43 = fma(x43, pc.a, pc.b);
+            x44 = fma(x44, pc.a, pc.b);
+            x45 = fma(x45, pc.a, pc.b);
+            x46 = fma(x46, pc.a, pc.b);
+            x47 = fma(x47, pc.a, pc.b);
+            x48 = fma(x48, pc.a, pc.b);
+            x49 = fma(x49, pc.a, pc.b);
+            x50 = fma(x50, pc.a, pc.b);
+            x51 = fma(x51, pc.a, pc.b);
+            x52 = fma(x52, pc.a, pc.b);
+            x53 = fma(x53, pc.a, pc.b);
+            x54 = fma(x54, pc.a, pc.b);
+            x55 = fma(x55, pc.a, pc.b);
+            x56 = fma(x56, pc.a, pc.b);
+            x57 = fma(x57, pc.a, pc.b);
+            x58 = fma(x58, pc.a, pc.b);
+            x59 = fma(x59, pc.a, pc.b);
+            x60 = fma(x60, pc.a, pc.b);
+            x61 = fma(x61, pc.a, pc.b);
+            x62 = fma(x62, pc.a, pc.b);
+            x63 = fma(x63, pc.a, pc.b);
+        }
+        if (ACCUM >= 128) {
+            x64 = fma(x64, pc.a, pc.b);
+            x65 = fma(x65, pc.a, pc.b);
+            x66 = fma(x66, pc.a, pc.b);
+            x67 = fma(x67, pc.a, pc.b);
+            x68 = fma(x68, pc.a, pc.b);
+            x69 = fma(x69, pc.a, pc.b);
+            x70 = fma(x70, pc.a, pc.b);
+            x71 = fma(x71, pc.a, pc.b);
+            x72 = fma(x72, pc.a, pc.b);
+            x73 = fma(x73, pc.a, pc.b);
+            x74 = fma(x74, pc.a, pc.b);
+            x75 = fma(x75, pc.a, pc.b);
+            x76 = fma(x76, pc.a, pc.b);
+            x77 = fma(x77, pc.a, pc.b);
+            x78 = fma(x78, pc.a, pc.b);
+            x79 = fma(x79, pc.a, pc.b);
+            x80 = fma(x80, pc.a, pc.b);
+            x81 = fma(x81, pc.a, pc.b);
+            x82 = fma(x82, pc.a, pc.b);
+            x83 = fma(x83, pc.a, pc.b);
+            x84 = fma(x84, pc.a, pc.b);
+            x85 = fma(x85, pc.a, pc.b);
+            x86 = fma(x86, pc.a, pc.b);
+            x87 = fma(x87, pc.a, pc.b);
+            x88 = fma(x88, pc.a, pc.b);
+            x89 = fma(x89, pc.a, pc.b);
+            x90 = fma(x90, pc.a, pc.b);
+            x91 = fma(x91, pc.a, pc.b);
+            x92 = fma(x92, pc.a, pc.b);
+            x93 = fma(x93, pc.a, pc.b);
+            x94 = fma(x94, pc.a, pc.b);
+            x95 = fma(x95, pc.a, pc.b);
+            x96 = fma(x96, pc.a, pc.b);
+            x97 = fma(x97, pc.a, pc.b);
+            x98 = fma(x98, pc.a, pc.b);
+            x99 = fma(x99, pc.a, pc.b);
+            x100 = fma(x100, pc.a, pc.b);
+            x101 = fma(x101, pc.a, pc.b);
+            x102 = fma(x102, pc.a, pc.b);
+            x103 = fma(x103, pc.a, pc.b);
+            x104 = fma(x104, pc.a, pc.b);
+            x105 = fma(x105, pc.a, pc.b);
+            x106 = fma(x106, pc.a, pc.b);
+            x107 = fma(x107, pc.a, pc.b);
+            x108 = fma(x108, pc.a, pc.b);
+            x109 = fma(x109, pc.a, pc.b);
+            x110 = fma(x110, pc.a, pc.b);
+            x111 = fma(x111, pc.a, pc.b);
+            x112 = fma(x112, pc.a, pc.b);
+            x113 = fma(x113, pc.a, pc.b);
+            x114 = fma(x114, pc.a, pc.b);
+            x115 = fma(x115, pc.a, pc.b);
+            x116 = fma(x116, pc.a, pc.b);
+            x117 = fma(x117, pc.a, pc.b);
+            x118 = fma(x118, pc.a, pc.b);
+            x119 = fma(x119, pc.a, pc.b);
+            x120 = fma(x120, pc.a, pc.b);
+            x121 = fma(x121, pc.a, pc.b);
+            x122 = fma(x122, pc.a, pc.b);
+            x123 = fma(x123, pc.a, pc.b);
+            x124 = fma(x124, pc.a, pc.b);
+            x125 = fma(x125, pc.a, pc.b);
+            x126 = fma(x126, pc.a, pc.b);
+            x127 = fma(x127, pc.a, pc.b);
+        }
+    }
+    float sum = x0;
+    if (ACCUM >= 2) {
+        sum += x1;
+    }
+    if (ACCUM >= 4) {
+        sum += x2 + x3;
+    }
+    if (ACCUM >= 8) {
+        sum += x4 + x5 + x6 + x7;
+    }
+    if (ACCUM >= 16) {
+        sum += x8 + x9 + x10 + x11 + x12 + x13 + x14 + x15;
+    }
+    if (ACCUM >= 32) {
+        sum += x16 + x17 + x18 + x19 + x20 + x21 + x22 + x23 + x24 + x25 + x26 + x27 + x28 +
+               x29 + x30 + x31;
+    }
+    if (ACCUM >= 64) {
+        sum += x32 + x33 + x34 + x35 + x36 + x37 + x38 + x39 + x40 + x41 + x42 + x43 + x44 +
+               x45 + x46 + x47 + x48 + x49 + x50 + x51 + x52 + x53 + x54 + x55 + x56 + x57 +
+               x58 + x59 + x60 + x61 + x62 + x63;
+    }
+    if (ACCUM >= 128) {
+        sum += x64 + x65 + x66 + x67 + x68 + x69 + x70 + x71 + x72 + x73 + x74 + x75 + x76 +
+               x77 + x78 + x79 + x80 + x81 + x82 + x83 + x84 + x85 + x86 + x87 + x88 + x89 +
+               x90 + x91 + x92 + x93 + x94 + x95 + x96 + x97 + x98 + x99 + x100 + x101 +
+               x102 + x103 + x104 + x105 + x106 + x107 + x108 + x109 + x110 + x111 + x112 +
+               x113 + x114 + x115 + x116 + x117 + x118 + x119 + x120 + x121 + x122 + x123 +
+               x124 + x125 + x126 + x127;
+    }
+    outBuf.outData[idx] = sum;
+}
