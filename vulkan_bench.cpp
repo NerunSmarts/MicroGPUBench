@@ -76,7 +76,7 @@ Options parseOptions(int argc, char** argv) {
         std::exit(1);
     }
         if (opt.accum == 0 || opt.accum > 1024) {
-                std::cerr << "accum must be 1, 2, 4, 8, 16, 32, 64, or 128.\n";
+                std::cerr << "accum must be between 1 and 1024.\n";
         std::exit(1);
     }
     return opt;
