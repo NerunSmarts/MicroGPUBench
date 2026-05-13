@@ -30,6 +30,8 @@ A cross-platform FP32 compute micro-benchmark for OpenCL and Vulkan.
 - Work items are rounded up to a multiple of the local size.
 - The shader uses 4 accumulators by default (ACCUM=4). Each iteration is one fused
 	multiply-add per accumulator, counted as 2 FLOPs each.
+> [!NOTE]
+> This can result in 2x performance reported on some systems (such as Radeon Strix Point) that can perform both steps as one operation.
 - OpenCL builds with fast-math flags enabled for peak throughput.
 - Shader compilation uses basic SPIR-V generation flags for compatibility across
 	glslangValidator versions.
