@@ -1,5 +1,5 @@
 # MicroGPUBench
-FP32 compute micro-benchmark for OpenCL and Vulkan compute on AArch64.
+A cross-platform FP32 compute micro-benchmark for OpenCL and Vulkan.
 
 ## Build
 
